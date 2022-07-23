@@ -1,4 +1,4 @@
-def fib(x):  # x = number of term
+def fib(x):  # x = limit
     a = 0  # starting point
     b = 1
     addition = 0 # sum of a and b
