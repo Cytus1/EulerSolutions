@@ -1,11 +1,4 @@
-"""
-Main point: Iterate
-
-Append only odd, create gap for where gap =  n += 1 each 4 number.
-"""
-
 grid, scan_dia = [x for x in range(1, (1001 * 1001) + 1) if x % 2 != 0], [1]
-total_spiral_num = 1001 * 1001
 spiral_gap_till_edge, four_counter, base_rate = 0, 0, 1
 
 while scan_dia[-1] != grid[-1]:
