@@ -1,15 +1,7 @@
-def fib(x):  # x = limit
-    a = 0  # starting point
-    b = 1
-    addition = 0 # sum of a and b
-    even_list = []
-    while b < x:
-        if addition % 2 == 0:
-            even_list.append(addition)
-            print(sum(even_list))
-
-        addition = a + b
-        b = a
-        a = addition
-
-fib(4000000) #4613732
+def generate_fib_sequence (limit):
+    sum, a, b = 0, 1, 0
+    while a < limit:
+        if a % 2 == 0: sum += a
+        a, b = (a + b), (a)
+    return sum
+print(generate_fib_sequence(4000000)) #4613732
