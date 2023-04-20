@@ -1,4 +1,4 @@
-series = "73167176531330624919225119674426574742355349194934\
+data = "73167176531330624919225119674426574742355349194934\
 96983520312774506326239578318016984801869478851843\
 85861560789112949495459501737958331952853208805511\
 12540698747158523863050715693290963295227443043557\
@@ -19,29 +19,15 @@ series = "73167176531330624919225119674426574742355349194934\
 05886116467109405077541002256983155200055935729725\
 71636269561882670428252483600823257530420752963450"
 
-str_to_int = {
-    "1": 1, "2": 2, "3": 3, "4": 4, "5" : 5, "6" : 6, "7" : 7, "8" : 8, "9" : 9, "0" : 0
-}
+two_d_list = data.split("\n") ; one_d_list = []
+for num in range(0, len(two_d_list)): number = two_d_list[num]
+for num in number: one_d_list.append(int(num))
 
-print(len(series))  #1000
+def max_thirteen_adj(array):
+    greatest_product = 0
+    for index in range(len(array) - 14): product = 1
+    for adj_number in range(13): product *= array[index + adj_number]
+    if greatest_product < product: greatest_product = product
+    return greatest_product
 
-greatest_product = 0
-for i in range(len(series) - 12):
-    n1 = str_to_int.get(series[i])
-    n2 = str_to_int.get(series[i + 1])
-    n3 = str_to_int.get(series[i + 2])
-    n4 = str_to_int.get(series[i + 3])
-    n5 = str_to_int.get(series[i + 4])
-    n6 = str_to_int.get(series[i + 5])
-    n7 = str_to_int.get(series[i + 6])
-    n8 = str_to_int.get(series[i + 7])
-    n9 = str_to_int.get(series[i + 8])
-    n10 = str_to_int.get(series[i + 9])
-    n11 = str_to_int.get(series[i + 10])
-    n12 = str_to_int.get(series[i + 11])
-    n13 = str_to_int.get(series[i + 12])
-    print(n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13)
-    if n1*n2*n3*n4*n5*n6*n7*n8*n9*n10*n11*n12*n13 > greatest_product:
-        greatest_product = n1*n2*n3*n4*n5*n6*n7*n8*n9*n10*n11*n12*n13
-
-print(greatest_product) #23514624000
+print(max_thirteen_adj(one_d_list)) #23514624000
